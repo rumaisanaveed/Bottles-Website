@@ -108,3 +108,37 @@ tl5.to(
   },
   "animation-5"
 );
+
+const firstText = document.getElementById("firstText");
+const secondText = document.getElementById("secondText");
+const slider = document.querySelector(".slider");
+
+let xPercent = 0;
+let direction = -1;
+
+function animate() {
+  if (xPercent < -100) {
+    xPercent = 0;
+  } else if (xPercent > 0) {
+    xPercent = -100;
+  }
+
+  firstText.style.transform = `translateX(${xPercent}%)`;
+  secondText.style.transform = `translateX(${xPercent}%)`;
+
+  requestAnimationFrame(animate);
+  xPercent += 0.1 * direction;
+}
+
+animate(); // Start the animation loop
+
+// Add scroll event listener for scroll-triggered animation
+window.addEventListener("scroll", function () {
+  const triggerPosition = window.innerHeight;
+
+  // Check if the trigger position is reached
+  if (window.scrollY > triggerPosition) {
+    // Update animation or perform additional actions
+    console.log("Scroll-triggered animation!");
+  }
+});

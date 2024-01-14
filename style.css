@@ -54,24 +54,23 @@ header {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
-  animation: moveRightLeft 10s infinite linear;
 }
 
-@keyframes moveRightLeft {
+/* @keyframes moveRightLeft {
   from {
     transform: translateX(-50%);
   }
   to {
     transform: translateX(0%);
-  }
-  /* 0%,
+  } */
+/* 0%,
   100% {
     transform: translateX(-100%);
   }
   50% {
     transform: translateX(100%);
   } */
-}
+/* } */
 
 .hero-content {
   z-index: 1;
@@ -80,6 +79,12 @@ header {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.slider {
+  display: flex;
+  gap: 1em;
+  transition: transform 0.25s ease-in-out;
 }
 
 .hero-content h1 {
